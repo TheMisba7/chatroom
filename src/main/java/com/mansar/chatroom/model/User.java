@@ -6,7 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 
+import java.time.LocalDateTime;
 import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,4 +26,7 @@ public class User {
     private List<Role> roles;
     @ManyToOne
     private Room room;
+    @CreatedDate
+    private LocalDateTime createdAt;
+    private LocalDateTime lastSeen;
 }
